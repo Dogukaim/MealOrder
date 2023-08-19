@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="gTV-IL-0wX" customClass="SpecialDishesViewCell" customModule="FodFod" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="347" height="105"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="347" height="105"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZmN-tn-8Qa" userLabel="Label Descrption">
+                        <rect key="frame" x="109" y="35" width="235" height="50"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" systemColor="systemGray2Color"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZzI-EU-niS" userLabel="Label title">
+                        <rect key="frame" x="122" y="6" width="208" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="j4d-uS-VIM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ksx-h8-2GH">
+                        <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="105" id="8cD-6m-MH4"/>
+                            <constraint firstAttribute="height" constant="105" id="X1T-GI-b2Z"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JM2-Sb-Q4T" userLabel="Label calori">
+                        <rect key="frame" x="280" y="87" width="42" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="fuI-PD-NSZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" systemColor="systemGray2Color"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="ZzI-EU-niS" firstAttribute="leading" secondItem="Ksx-h8-2GH" secondAttribute="trailing" constant="17" id="AhB-Yv-QgD"/>
+                <constraint firstAttribute="bottom" secondItem="ZmN-tn-8Qa" secondAttribute="bottom" constant="20" id="Anq-le-wcr"/>
+                <constraint firstAttribute="bottom" secondItem="Ksx-h8-2GH" secondAttribute="bottom" id="Ovo-Hs-OS6"/>
+                <constraint firstItem="ZmN-tn-8Qa" firstAttribute="leading" secondItem="Ksx-h8-2GH" secondAttribute="trailing" constant="4" id="PxV-dy-Aps"/>
+                <constraint firstAttribute="trailing" secondItem="Ksx-h8-2GH" secondAttribute="trailing" constant="242" id="Qjo-q1-38S"/>
+                <constraint firstAttribute="trailing" secondItem="JM2-Sb-Q4T" secondAttribute="trailing" constant="25" id="YbN-OS-vek"/>
+                <constraint firstItem="JM2-Sb-Q4T" firstAttribute="bottom" secondItem="Ksx-h8-2GH" secondAttribute="bottom" id="cOz-Zq-Kne"/>
+                <constraint firstItem="ZmN-tn-8Qa" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="35" id="eIB-gL-xcr"/>
+                <constraint firstItem="Ksx-h8-2GH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="tfX-uo-CnJ"/>
+                <constraint firstItem="Ksx-h8-2GH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="v3j-vD-Iuh"/>
+                <constraint firstItem="ZzI-EU-niS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="6" id="wil-z3-4ru"/>
+                <constraint firstAttribute="trailing" secondItem="ZmN-tn-8Qa" secondAttribute="trailing" constant="3" id="xJc-vr-Qjz"/>
+                <constraint firstAttribute="trailing" secondItem="ZzI-EU-niS" secondAttribute="trailing" constant="17" id="zgg-Oe-5z2"/>
+            </constraints>
+            <size key="customSize" width="284" height="105"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="25"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="SpecialImage" destination="Ksx-h8-2GH" id="obK-Bm-gaC"/>
+                <outlet property="specialCalori" destination="JM2-Sb-Q4T" id="9TU-hr-epd"/>
+                <outlet property="specialDescrption" destination="ZmN-tn-8Qa" id="pBe-Iy-PqM"/>
+                <outlet property="specialTitle" destination="ZzI-EU-niS" id="3yY-OG-UkP"/>
+            </connections>
+            <point key="canvasLocation" x="202.29007633587784" y="-54.577464788732399"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
