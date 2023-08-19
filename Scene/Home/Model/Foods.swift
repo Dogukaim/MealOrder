@@ -54,7 +54,8 @@ struct FoodCategory: Codable,CategoryProtocolViewCell {
 
 
 // MARK: - Dish
-struct Dish: Codable,DishesViewCellProtocol,SpecialDishesViewProtocol,CategoryFoodCellProtocol {
+struct Dish: Codable,DishesViewCellProtocol,SpecialDishesViewProtocol,CategoryFoodCellProtocol,DetailFoodViewProtocol {
+    
     
     
     let id, name, popularDescription, specialsDescription: String?
@@ -94,6 +95,7 @@ struct Dish: Codable,DishesViewCellProtocol,SpecialDishesViewProtocol,CategoryFo
     }
     
     
+        //MARK: SpecialDishesProtocol
     
     var specialImages: URL? {
         return URL(string:  image ?? "")
@@ -138,6 +140,32 @@ struct Dish: Codable,DishesViewCellProtocol,SpecialDishesViewProtocol,CategoryFo
         return ""
     }
     
+    
+    //MARK: DetailFoodViewProtocol
+    
+    var detailImagee: String {
+        image ?? ""
+    }
+    
+    var detailTitlee: String {
+        name ?? ""
+    }
+    
+    var detailCaloriee: String {
+        if let calories = calories {
+            return "\(calories)"
+        }
+        return ""
+    }
+    
+    var detailDescriptionn: String {
+        if popularDescription != nil {
+            return popularDescription ?? ""
+        } else if specialsDescription != nil {
+            return specialsDescription ?? ""
+        }
+        return ""
+    }
     
     
 }
