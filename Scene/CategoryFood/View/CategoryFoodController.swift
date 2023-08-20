@@ -54,7 +54,14 @@ extension CategoryFoodController: UICollectionViewDataSource,UICollectionViewDel
     }
     
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = DetailViewController()
+        let bundle = Bundle(for: type(of: controller))
+        bundle.loadNibNamed("DetailViewController", owner: controller,options: nil)
+        self.navigationController?.show(controller, sender: nil)
+        controller.getDataForFireBase(data: foodArray[indexPath.row])
+        controller.configure(data: foodArray[indexPath.row])
+    }
     
     
 }

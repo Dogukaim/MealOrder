@@ -80,8 +80,9 @@ class DetailViewController: UIViewController {
     
     
     
-    @IBAction func addButtonTappedF(_ sender: Any) {
+    @IBAction func addButtonTappedF(_ sender: UIButton) {
         configureAddButton()
+        
     }
     
     
@@ -101,7 +102,7 @@ class DetailViewController: UIViewController {
         if isSelected {
             isSelected = false
             addButtonF.setTitle("Added to Cart", for: .normal)
-            addButtonF.tintColor = UIColor(red: 0.00, green: 0.55, blue: 0.01, alpha: 1.00)
+            addButtonF.backgroundColor = UIColor(red: 0.00, green: 0.55, blue: 0.01, alpha: 1.00)
             addButtonF.layer.cornerRadius = 15
             createUsersData()
             showBasket()
@@ -171,7 +172,7 @@ class DetailViewController: UIViewController {
     
     //MARK: View Model
     
-    private func configure(data: DetailFoodViewProtocol) {
+    func configure(data: DetailFoodViewProtocol) {
         
         imageFood.kf.setImage(with: URL(string: data.detailImagee))
         titleLabelF.text = data.detailTitlee
