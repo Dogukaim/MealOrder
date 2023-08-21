@@ -53,6 +53,19 @@ class HomeViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func profileBarTap(_ sender: Any) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "ProfileController") as! ProfileController
+        navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    
+    
+    @IBAction func basketBarTap(_ sender: Any) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "BasketViewController") as! BasketViewController
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
 }
 
 
@@ -97,9 +110,6 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         }
     }
     
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-//           return CGSizeMake(view.frame.size.width/3.8, view.frame.size.width/3.8)
-//       }
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -123,4 +133,9 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         }
     }
     
+    
+    
+    
 }
+
+

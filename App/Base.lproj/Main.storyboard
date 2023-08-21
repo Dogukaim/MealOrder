@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BOW-HW-spi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -147,7 +147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15787" y="-13"/>
+            <point key="canvasLocation" x="-2011" y="108"/>
         </scene>
         <!--Category Food Controller-->
         <scene sceneID="m5b-p9-Ewk">
@@ -220,7 +220,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lQU-Qd-wNT" userLabel="popularCollection">
                                 <rect key="frame" x="0.0" y="325" width="393" height="311"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="20" id="FLh-ka-x6I">
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FLh-ka-x6I">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -240,12 +240,11 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MYY-wu-9DY" userLabel="chefSpecials">
                                 <rect key="frame" x="0.0" y="690" width="393" height="79"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OIb-wH-Qjz">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OIb-wH-Qjz">
                                     <size key="itemSize" width="128" height="128"/>
-                                    <size key="estimatedItemSize" width="128" height="94"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
                                 <connections>
@@ -299,9 +298,15 @@
                     <navigationItem key="navigationItem" title="Menu" id="wj3-qR-QsZ">
                         <barButtonItem key="leftBarButtonItem" image="person.fill" catalog="system" id="9J8-vl-itI">
                             <color key="tintColor" systemColor="systemGreenColor"/>
+                            <connections>
+                                <action selector="profileBarTap:" destination="pak-mj-i9L" id="vPO-jB-PkU"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="L" image="cart.circle.fill" catalog="system" id="YoY-2G-QNa">
                             <color key="tintColor" systemColor="systemGreenColor"/>
+                            <connections>
+                                <action selector="basketBarTap:" destination="pak-mj-i9L" id="rXg-zf-TAX"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -343,20 +348,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rge-HP-INx">
-                                <rect key="frame" x="16" y="103" width="361" height="32"/>
-                                <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                <segments>
-                                    <segment title="Snacks"/>
-                                    <segment title="Pizzas"/>
-                                    <segment title="Nigerian"/>
-                                    <segment title="Sea Foods"/>
-                                    <segment title="Vegetarian"/>
-                                </segments>
-                                <connections>
-                                    <action selector="didChangeCategory:" destination="XBh-Ts-Rup" eventType="touchUpInside" id="ORj-Bw-Xov"/>
-                                </connections>
-                            </segmentedControl>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="6wd-kj-yLq">
                                 <rect key="frame" x="0.0" y="134" width="393" height="56"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -372,7 +363,7 @@
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
                                 <connections>
@@ -380,19 +371,35 @@
                                     <outlet property="delegate" destination="XBh-Ts-Rup" id="PHR-jB-Mqj"/>
                                 </connections>
                             </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rge-HP-INx">
+                                <rect key="frame" x="16" y="103" width="361" height="32"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <segments>
+                                    <segment title="Snacks"/>
+                                    <segment title="Pizzas"/>
+                                    <segment title="Nigerian"/>
+                                    <segment title="Sea Foods"/>
+                                    <segment title="Vegetarian"/>
+                                </segments>
+                                <color key="tintColor" red="0.63699983579999997" green="1" blue="0.29140772349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="didChangeCategoryy:" destination="XBh-Ts-Rup" eventType="valueChanged" id="LtR-ih-Zld"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KvA-LX-0Pb"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="pvG-x5-GUx" firstAttribute="trailing" secondItem="KvA-LX-0Pb" secondAttribute="trailing" id="0e6-dn-csM"/>
                             <constraint firstItem="6wd-kj-yLq" firstAttribute="top" secondItem="rge-HP-INx" secondAttribute="bottom" id="Brl-J0-bv1"/>
-                            <constraint firstItem="rge-HP-INx" firstAttribute="leading" secondItem="KvA-LX-0Pb" secondAttribute="leading" constant="16" id="Rye-NQ-2uz"/>
+                            <constraint firstAttribute="trailing" secondItem="rge-HP-INx" secondAttribute="trailing" constant="16" id="MVz-dP-sfi"/>
                             <constraint firstItem="6wd-kj-yLq" firstAttribute="trailing" secondItem="KvA-LX-0Pb" secondAttribute="trailing" id="SIf-Af-h6i"/>
                             <constraint firstItem="pvG-x5-GUx" firstAttribute="top" secondItem="6wd-kj-yLq" secondAttribute="bottom" id="XGw-DF-PAK"/>
                             <constraint firstItem="rge-HP-INx" firstAttribute="top" secondItem="KvA-LX-0Pb" secondAttribute="top" id="ac3-SE-V3W"/>
-                            <constraint firstItem="KvA-LX-0Pb" firstAttribute="trailing" secondItem="rge-HP-INx" secondAttribute="trailing" constant="16" id="bNf-eS-r3G"/>
                             <constraint firstItem="6wd-kj-yLq" firstAttribute="leading" secondItem="KvA-LX-0Pb" secondAttribute="leading" id="dEM-5F-FXn"/>
+                            <constraint firstItem="6wd-kj-yLq" firstAttribute="top" secondItem="rge-HP-INx" secondAttribute="bottom" id="hQT-5u-AKt"/>
                             <constraint firstItem="pvG-x5-GUx" firstAttribute="leading" secondItem="KvA-LX-0Pb" secondAttribute="leading" id="hgk-8e-cHX"/>
+                            <constraint firstItem="rge-HP-INx" firstAttribute="leading" secondItem="KvA-LX-0Pb" secondAttribute="leading" constant="16" id="sPu-rR-Tem"/>
                             <constraint firstItem="KvA-LX-0Pb" firstAttribute="bottom" secondItem="pvG-x5-GUx" secondAttribute="bottom" id="x5D-2O-zgC"/>
                         </constraints>
                     </view>
@@ -407,6 +414,7 @@
                     <connections>
                         <outlet property="barSearch" destination="6wd-kj-yLq" id="TLw-iE-N0Z"/>
                         <outlet property="searchCollection" destination="pvG-x5-GUx" id="Flt-fY-tWr"/>
+                        <outlet property="segment" destination="rge-HP-INx" id="Zde-EZ-sEE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCX-gk-0Yf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -440,9 +448,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="h92-66-aKU"/>
                                 </constraints>
-                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Sign Out"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Sign Out">
+                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="signOutButton:" destination="VcR-ma-fyd" eventType="touchUpInside" id="JEM-GY-XqE"/>
                                 </connections>
@@ -501,13 +511,16 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXg-hK-hdc">
                                         <rect key="frame" x="67" y="70" width="258" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="UbM-hT-hSf"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="258" id="Z8a-Xi-BKb"/>
                                         </constraints>
                                         <color key="tintColor" red="0.39607840779999998" green="0.76862752440000004" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Checkout"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Checkout">
+                                            <color key="baseBackgroundColor" red="0.64705884459999996" green="0.20784312490000001" blue="0.58823531870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="checkOutButTapps:" destination="oAL-3s-vyR" eventType="touchUpInside" id="tjf-tM-ObG"/>
                                         </connections>
@@ -575,7 +588,7 @@
         <!--Login View Controller-->
         <scene sceneID="nN8-rG-h1j">
             <objects>
-                <viewController storyboardIdentifier="LogInController" id="BMk-md-t1D" customClass="LoginViewController" customModule="FodFod" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BMk-md-t1D" customClass="LoginViewController" customModule="FodFod" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qXV-jE-9fc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -847,21 +860,6 @@
             </objects>
             <point key="canvasLocation" x="3080.1526717557249" y="823.94366197183103"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="6Bb-D2-Eed">
-            <objects>
-                <viewController id="UsZ-Re-6Wj" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6Nq-jo-gra">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="EtA-ix-d3h"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="edP-dA-T4x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3199" y="-875"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="37y-ji-HT4">
             <objects>
@@ -924,6 +922,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

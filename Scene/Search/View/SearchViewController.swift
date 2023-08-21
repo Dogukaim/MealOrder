@@ -17,6 +17,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchCollection: UICollectionView!
     @IBOutlet weak var barSearch: UISearchBar!
     
+    @IBOutlet weak var segment: UISegmentedControl!
     
     
     override func viewDidLoad() {
@@ -32,12 +33,14 @@ class SearchViewController: UIViewController {
         navigationController?.pushViewController(controller, animated: true)
     }
     
-    @IBAction func didChangeCategory(_ sender: UISegmentedControl) {
+    
+    @IBAction func didChangeCategoryy(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
             
         case 0:
             searchViewModel.getSearchDishes(catID: searchViewModel.searchCategories[sender.selectedSegmentIndex].id ?? "" )
             isSucceded()
+            
             
         case 1:
             searchViewModel.getSearchDishes(catID: searchViewModel.searchCategories[sender.selectedSegmentIndex].id ?? "" )
@@ -58,8 +61,6 @@ class SearchViewController: UIViewController {
         default:
             return
         }
-        
-        
     }
     
     
@@ -77,7 +78,7 @@ class SearchViewController: UIViewController {
         searchViewModel.getSearchDishes(catID: "cat1")
     }
     
-    private func isSucceded() {
+    func isSucceded() {
         searchViewModel.successCallBack = { [weak self ] in
             self?.segmentedDishes = self?.searchViewModel.searchDishes ?? []
             self?.searchCollection.reloadData()
@@ -113,8 +114,11 @@ extension SearchViewController: UICollectionViewDelegate,UICollectionViewDataSou
         
         let cell = searchCollection.dequeueReusableCell(withReuseIdentifier: "\(SearchViewCell.self)", for: indexPath) as! SearchViewCell
         cell.configure(data: searchViewModel.searchDishes[indexPath.row])
+        
         return cell
     }
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let controller = DetailViewController()

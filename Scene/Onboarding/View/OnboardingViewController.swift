@@ -61,7 +61,7 @@ class OnboardingViewController: UIViewController {
     }
     
     @IBAction func skipButtonTic(_ sender: UIButton) {
-        let controler = storyboard?.instantiateViewController(identifier: "HomeNC") as! UINavigationController
+        let controler = storyboard?.instantiateViewController(identifier: "LoginViewController") as! LoginViewController
         controler.modalPresentationStyle = .fullScreen
         controler.modalTransitionStyle = .coverVertical
         present(controler,animated: true,completion: nil)
