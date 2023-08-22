@@ -22,15 +22,17 @@ class LoginViewController: UIViewController {
     }
     @IBAction func loginButtonTapped(_ sender: Any) {
         if emailText.text != nil && passwordText.text != nil {
-            
+            self.showHud(show: true)
             Auth.auth().signIn(withEmail: emailText.text!, password: passwordText.text!) {
                 data, error in
                 if error != nil {
                     AlertMessage.alertMessage(title: "Error", message: "Email or password is incorrect", vc: self)
+                    
                 } else {
                     let controller = self.storyboard?.instantiateViewController(withIdentifier: "HomeNNC") as! UITabBarController
                     controller.modalPresentationStyle = .fullScreen
                     self.present(controller,animated: true,completion: nil)
+                    
                 }
             }
         }

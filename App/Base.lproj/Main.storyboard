@@ -205,7 +205,7 @@
                                     <constraint firstAttribute="width" constant="393" id="ogi-ZN-fIl"/>
                                     <constraint firstAttribute="height" constant="150" id="qM5-6H-TE7"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mj6-hL-Dc4">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mj6-hL-Dc4">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -220,7 +220,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lQU-Qd-wNT" userLabel="popularCollection">
                                 <rect key="frame" x="0.0" y="325" width="393" height="311"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FLh-ka-x6I">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="FLh-ka-x6I">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -356,14 +356,14 @@
                                     <outlet property="delegate" destination="XBh-Ts-Rup" id="XvF-Bu-Ddd"/>
                                 </connections>
                             </searchBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pvG-x5-GUx">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pvG-x5-GUx">
                                 <rect key="frame" x="0.0" y="190" width="393" height="579"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bRP-iK-4mM">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bRP-iK-4mM">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
                                 <connections>
@@ -373,7 +373,7 @@
                             </collectionView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rge-HP-INx">
                                 <rect key="frame" x="16" y="103" width="361" height="32"/>
-                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <color key="backgroundColor" red="0.39607840779999998" green="0.76862752440000004" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <segments>
                                     <segment title="Snacks"/>
                                     <segment title="Pizzas"/>
@@ -536,7 +536,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMj-Ww-c4Z">
-                                        <rect key="frame" x="350.33333333333331" y="5" width="21.666666666666686" height="21"/>
+                                        <rect key="frame" x="322" y="5" width="50" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="fSX-3P-GMk"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -545,9 +548,9 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="HMj-Ww-c4Z" firstAttribute="top" secondItem="MBw-4J-bBi" secondAttribute="top" constant="5" id="J0i-US-oMy"/>
+                                    <constraint firstItem="HMj-Ww-c4Z" firstAttribute="top" secondItem="MBw-4J-bBi" secondAttribute="top" constant="5" id="MoD-6L-73k"/>
                                     <constraint firstAttribute="bottom" secondItem="HMj-Ww-c4Z" secondAttribute="bottom" constant="102" id="PTr-xI-24p"/>
                                     <constraint firstAttribute="trailing" secondItem="HMj-Ww-c4Z" secondAttribute="trailing" constant="21" id="Sjp-Ki-5Ev"/>
-                                    <constraint firstItem="HMj-Ww-c4Z" firstAttribute="leading" secondItem="eZb-N6-oBN" secondAttribute="trailing" constant="253.66999999999999" id="T8c-b4-ufb"/>
                                     <constraint firstAttribute="bottom" secondItem="eZb-N6-oBN" secondAttribute="bottom" constant="102" id="V5W-3s-LLw"/>
                                     <constraint firstAttribute="height" constant="128" id="Zoi-Py-zCh"/>
                                     <constraint firstItem="iXg-hK-hdc" firstAttribute="top" secondItem="MBw-4J-bBi" secondAttribute="top" constant="70" id="eTz-sI-Cfh"/>
@@ -863,7 +866,7 @@
         <!--Navigation Controller-->
         <scene sceneID="37y-ji-HT4">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BOW-HW-spi" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginView" automaticallyAdjustsScrollViewInsets="NO" id="BOW-HW-spi" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lew-ec-HSD">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>

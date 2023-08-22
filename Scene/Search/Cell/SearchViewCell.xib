@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="316" height="104"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gKA-Gg-VI8">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gKA-Gg-VI8">
                         <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="104" id="N4E-yR-IB2"/>
@@ -71,7 +71,7 @@
                 <outlet property="imageTis" destination="gKA-Gg-VI8" id="2fw-0q-uJK"/>
                 <outlet property="searchTitl" destination="akd-2n-XLc" id="7xO-QZ-nhw"/>
             </connections>
-            <point key="canvasLocation" x="-202" y="-31"/>
+            <point key="canvasLocation" x="-203.0534351145038" y="-31.690140845070424"/>
         </collectionViewCell>
     </objects>
 </document>

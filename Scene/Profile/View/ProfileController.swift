@@ -39,7 +39,7 @@ class ProfileController: UIViewController {
     
     
     private func gologinScreen() {
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "LogInController") as! LoginViewController
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         controller.modalPresentationStyle = .fullScreen
         self.present(controller,animated: true)
     }

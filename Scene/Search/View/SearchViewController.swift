@@ -15,6 +15,7 @@ class SearchViewController: UIViewController {
     private var allCategoryDishes = [Dish]()
     
     @IBOutlet weak var searchCollection: UICollectionView!
+    
     @IBOutlet weak var barSearch: UISearchBar!
     
     @IBOutlet weak var segment: UISegmentedControl!
@@ -104,7 +105,10 @@ extension SearchViewController: UISearchBarDelegate {
 }
 
 
-extension SearchViewController: UICollectionViewDelegate,UICollectionViewDataSource {
+extension SearchViewController: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+    
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return searchViewModel.searchDishes.count
@@ -129,4 +133,14 @@ extension SearchViewController: UICollectionViewDelegate,UICollectionViewDataSou
         controller.configure(data: searchViewModel.searchDishes[indexPath.row])
     }
     
-}
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let cellHeight: CGFloat = 104
+    
+        let cellwidth: CGFloat = searchCollection.frame.width
+
+        return .init(width: cellwidth, height: cellHeight)
+    }
+    
+    }
+

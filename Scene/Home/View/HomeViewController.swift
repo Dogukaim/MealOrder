@@ -27,13 +27,17 @@ class HomeViewController: UIViewController {
         getData()
         isSucced()
         collectionSetup()
+        
     }
     
-
+   
     func collectionSetup() {
         categoryCollectionView.register(UINib(nibName: "\(CategoryCollectionViewCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(CategoryCollectionViewCell.self)")
+        
         popularCollection.register(UINib(nibName: "\(DishesCollectionViewCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(DishesCollectionViewCell.self)")
         chefSpecials.register(UINib(nibName: "\(SpecialDishesViewCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(SpecialDishesViewCell.self)")
+        
+    
     }
     
     
@@ -69,9 +73,11 @@ class HomeViewController: UIViewController {
 }
 
 
-extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
@@ -95,10 +101,12 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         case categoryCollectionView:
             let cell = categoryCollectionView.dequeueReusableCell(withReuseIdentifier: "\(CategoryCollectionViewCell.self)", for: indexPath) as! CategoryCollectionViewCell
             cell.configure(data: viewModel.allCategories[indexPath.row])
+            
             return cell
         case popularCollection:
             let cell = popularCollection.dequeueReusableCell(withReuseIdentifier: "\(DishesCollectionViewCell.self)", for: indexPath) as! DishesCollectionViewCell
             cell.configure(data: viewModel.popularDishes[indexPath.row])
+            
             return cell
         case chefSpecials:
             let cell = chefSpecials.dequeueReusableCell(withReuseIdentifier: "\(SpecialDishesViewCell.self)", for: indexPath) as! SpecialDishesViewCell
@@ -110,7 +118,35 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         }
     }
     
+
     
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if (categoryCollectionView != nil) {
+           
+           return CGSize(width: (categoryCollectionView.frame.height), height: (categoryCollectionView.frame.width / 3) + 19)
+            
+        } else if  (popularCollection != nil) {
+            
+            return CGSize(width: (popularCollection.frame.width - 13) , height: (popularCollection.frame.height) - 41)
+            
+        }else {
+            
+            return collectionView.contentSize
+        }
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
+    }
+    
+    
+    
+    
+    
+
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView {

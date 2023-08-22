@@ -8,6 +8,7 @@
 //
 import UIKit
 
+
 class OnboardingViewController: UIViewController {
     
     @IBOutlet weak var collection: UICollectionView!
