@@ -8,7 +8,7 @@
 
 -UI: Xib,Storyboard
 
--Backend: Firebase
+-Backend: Firebase,FireStore
 
 -Networking: Alamofire(Generic)
 
